@@ -116,7 +116,7 @@
 	    <sourceDirectory>src/integration-test/clojure</sourceDirectory>
 	  </sourceDirectories>
 	  <testSourceDirectories>
-	    <testttSourceDirectory>src/test/clojure</testSourceDirectory>
+	    <testSourceDirectory>src/test/clojure</testSourceDirectory>
 	    <testSourceDirectory>src/integration-test/clojure</testSourceDirectory>
 	  </testSourceDirectories>
 	</configuration>

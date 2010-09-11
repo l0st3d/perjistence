@@ -1,4 +1,4 @@
-(ns rivelin.test-runner
+(ns test-runner
   (:require [clojure.test.junit :as junit]
 	    [clojure.test :as test]
 	    [clojure.contrib.duck-streams :as duck]

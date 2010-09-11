@@ -116,7 +116,7 @@
 	    <sourceDirectory>src/integration-test/clojure</sourceDirectory>
 	  </sourceDirectories>
 	  <testSourceDirectories>
-	    <testSourceDirectory>src/test/clojure</testSourceDirectory>
+	    <testttSourceDirectory>src/test/clojure</testSourceDirectory>
 	    <testSourceDirectory>src/integration-test/clojure</testSourceDirectory>
 	  </testSourceDirectories>
 	</configuration>
@@ -135,7 +135,7 @@
 	      <goal>test</goal>
 	    </goals>
 	    <configuration>
-	      <testScript>src/test/clojure/perjistence/run_unit_tests.clj</testScript>
+	      <testScript>src/test/clojure/run_unit_tests.clj</testScript>
 	    </configuration>	      
 	  </execution>
 	  <execution>
@@ -145,7 +145,7 @@
 	      <goal>test</goal>
 	    </goals>
 	    <configuration>
-	      <testScript>src/test/clojure/perjistence/run_integration_tests.clj</testScript>
+	      <testScript>src/test/clojure/run_integration_tests.clj</testScript>
 	      <testSourceDirectories>
 		<testSourceDirectory>src/test/clojure</testSourceDirectory>
 		<testSourceDirectory>src/integration-test/clojure</testSourceDirectory>
@@ -177,24 +177,6 @@
            </configuration>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.1.1</version>
-        <executions>
-          <execution>
-            <id>flatten-db</id>
-            <phase>pre-integration-test</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-	    <configuration>
-              <executable>scripts/flatten-db</executable>
-	    </configuration>
-	  </execution>
-	</executions>
       </plugin>
 
     </plugins>

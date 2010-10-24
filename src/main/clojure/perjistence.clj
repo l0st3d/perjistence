@@ -8,9 +8,15 @@
   (backends/add name (backends/create-pooled-datasource db-type username password host db-name)))
 
 (defmacro define-domain [& definitions]
-  (domain/parse definitions))
+  )
 
 (defn execute-query [sql connection]
   (sql/with-connection connection
     (sql/with-query-results rows [sql]
       (doall rows))))
+
+(defmacro defentity [entity table-name]
+  `(defrecord ~entity ~(backends/get-fields-in-table table-name)))
+
+(defn one-to-many [parent child]
+  )

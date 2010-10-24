@@ -28,3 +28,6 @@
   (dosync
    (alter available-backends assoc
 	  :mysql mysql/backend-data)))
+
+(defn get-fields-in-table [table-name]
+  ['id 'name])

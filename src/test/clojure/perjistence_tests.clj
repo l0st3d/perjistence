@@ -18,15 +18,19 @@
     (is (= [{:n 1}] (p/execute-query "SELECT 1 AS n" (:test-connection-name conn))))))
 
 (deftest should-define-domain
-  (p/define-domain
-    (sql-db :test-connection-name)
-    (Customer {:table "customers"}
-	      (has-many Order {:table "orders"}
-			(has-many Product)))
-    (Product {:table "products"}))
+  (p/defentity Customer "customers")
+  (p/defentity Product "products")
+  (p/defentity Order "orders")
+  (p/one-to-many Customer Order)
+  (p/one-to-many Order Product)
+
   (is (class? Customer))
   (is (class? Order))
-  (is (class? Product)))
+  (is (class? Product))
+
+  )
+
+
 
 (println "\n\n\n ==============================\n")
 (run-tests)
